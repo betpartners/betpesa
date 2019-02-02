@@ -1,0 +1,11 @@
+This application allows sports fans to bet on the outcome of a match prior to the match and get their ticket.
+They then proceed to watch the match and then when done, they get their wins.
+
+
+
+
+
+
+ustomer gets a printed ticket
+Game has odds for HW, VW, D and each has the set of associated odds.
+There is some sort of a spin wheel 

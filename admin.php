@@ -12,23 +12,6 @@ require_once 'header.php';
  ?>
 <link rel="stylesheet" type="text/css" href="css/index.css">
  <body style="background-color: #cccccc;">
-  <?php require_once 'addbet.php'; ?>
-  <button class="fixed shadow-lg" 
-
-  style="
-  border-radius: 50%;
-  width: 70px;
-  height: 70px;
-  background-color: #003840;
-  border: 0;
-  color: #fff;
-  cursor: pointer;
-  position: fixed;
-  z-index: 100;
-  top: 80%;
-  right: 30px;
-  outline: none;"
-  data-toggle="modal" data-target="#exampleModalCenter"><i style="font-size: 30px;" class="fa fa-plus"></i></button>
 <nav class="navbar fixed-top shadow-sm  navbar-light bg-light" style="height: 65px;" >
   <a class="navbar-brand" href="">
     <img src="img/icon.png"  width="30" height="30">
@@ -36,8 +19,7 @@ require_once 'header.php';
   </a>
   <h4 style="margin-left: 50px;">Cashflow</h4>
   <form class="form-inline mx-auto my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="search by customer..." aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      
     </form>
   <a class="btn btn-primary" style="
     position: absolute;
@@ -54,7 +36,55 @@ require_once 'header.php';
   <a href="manage.php" style="color: #005A5B;"  >Management</a>
 </div>
 <div class="main">
-    
+  <div class="row">
+    <div class="col">
+      <h1 class="h1" style="color: #008080;">Ksh. 20,000</h1>
+    </div>
+    <div class="col">
+      <div class="card">
+    <canvas id="myChart" width="100" height="100"></canvas>
+  </div>
+    </div>
+  </div>
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
 </div>
 
 

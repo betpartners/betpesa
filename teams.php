@@ -8,11 +8,11 @@ fclose($myfile);
 ?>
 <?php 
 require_once 'header.php';
-
+read_teams("WHERE 1;");
  ?>
 <link rel="stylesheet" type="text/css" href="css/index.css">
  <body style="background-color: #cccccc;">
-  <?php require_once 'addmatch.php'; ?>
+  <?php require_once 'addteam.php'; ?>
   <button class="fixed shadow-lg" 
 
   style="
@@ -35,8 +35,9 @@ require_once 'header.php';
     <strong style="color:#02A672;">Betpesa</strong>
   </a>
   <h4 style="margin-left: 50px;">List of Teams</h4>
-  <form class="form-inline mx-auto my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="search team" aria-label="Search">
+  <form class="form-inline mx-auto my-2 my-lg-0" method="post" action="betpesa.php">
+      <input class="form-control mr-sm-2" name="query" type="search" placeholder="search team..." aria-label="Search">
+      <input type="hidden" name="action" value="search_teams">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
   <a class="btn btn-success" style="
@@ -54,23 +55,13 @@ require_once 'header.php';
   <a href="weeks.php" style="color: #005A5B;"  >Weeks</a>
 </div>
 <div class="main">
-    <div class="row row-horizon">
+    <div class="row row-horizontal">
 
       <?php 
-
-      for ($i=0; $i < 100; $i++) { 
-        echo <<<END
-         <div class="col-3">
-          <div class="card border-light shadow-sm mb-3" style="max-width: 18rem;">
-          <div class="card-header">Peter</div>
-          <div class="card-body text-dark">
-            <h5 class="card-title">Dark card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          </div>
-          </div>
-        </div>
-
-END;
+      if (!$teams=="") {
+        echo $teams;
+              } else {
+        echo "No teams";
       }
        ?>
 </div>

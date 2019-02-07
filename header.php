@@ -1,7 +1,11 @@
 <?php 
-session_start();
+//session_start();
 require_once 'utils.php';
+
  ?>
+
+
+
 <head>
 	<title>Betpesa</title>
 	<link rel="icon" href="img/icon.png" />
@@ -10,6 +14,7 @@ require_once 'utils.php';
  	<link rel="stylesheet" type="text/css" href="css/header.css">
  	<script type="text/javascript" src="js/jquery.min.js"></script>
  	<script type="text/javascript" src="js/bootstrap.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
  	
 </head>
 <div id="overlay">
@@ -37,5 +42,5 @@ require_once 'utils.php';
 <script type="text/javascript">
  		
  		var overlay=document.getElementById('overlay');
- 		setInterval(function(){ overlay.style.display='none' }, 2000);
+ 		setInterval(function(){ overlay.style.display='none' }, 3000);
  	</script>
